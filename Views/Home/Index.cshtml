@@ -1,8 +1,4 @@
-﻿@using Microsoft.AspNetCore.Builder
-@using Microsoft.AspNetCore.Localization
-@using Microsoft.Extensions.Options
-@using Microsoft.AspNetCore.Mvc.Localization
-@model JobApplication
+﻿@model JobApplication
 @inject IViewLocalizer Localizer
 @inject IOptions<RequestLocalizationOptions> LocOptions
 @{
@@ -16,9 +12,12 @@
     }
 }
 
+@(98765.00.ToString("c"))
+@(987.87m.ToString("F2"))
+
 <div class="text-center">
     <h1 class="display-4">@Localizer["Welcome"]</h1>
-    <p>@Localizer["Learn about"] <a href="https://www.yogihosting.com">@Localizer["building Web apps with ASP.NET Core"]</a>.</p>
+    <p>@Localizer["Learn about"] <a href="">@Localizer["building Web apps with ASP.NET Core"]</a>.</p>
 </div>
 
 <h2>@Localizer["Job Application"]</h2>
