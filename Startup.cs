@@ -27,8 +27,15 @@ namespace GlobandLocwResourcesFiles
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddLocalization(options => { options.ResourcesPath = "Resources"; });
-            services.AddMvc().AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix).AddDataAnnotationsLocalization();
+            services.AddMvc()
+                .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix)
+                .AddDataAnnotationsLocalization();
+
+            services.AddLocalization(options => 
+            { 
+                options.ResourcesPath = "Resources"; 
+            });
+
 
             services.Configure<RequestLocalizationOptions>(options =>
             {
@@ -42,6 +49,8 @@ namespace GlobandLocwResourcesFiles
                 options.SupportedCultures = supportedCultures;
                 options.SupportedUICultures = supportedCultures;
             });
+
+
             services.AddControllersWithViews();
         }
 
@@ -63,7 +72,7 @@ namespace GlobandLocwResourcesFiles
 
             app.UseRouting();
 
-            //localization & globalization
+            //localization & globalization. Luego de app.UseRouting();
             var locOptions = app.ApplicationServices.GetService<IOptions<RequestLocalizationOptions>>();
             app.UseRequestLocalization(locOptions.Value);
 

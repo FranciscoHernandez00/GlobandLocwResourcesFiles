@@ -123,6 +123,9 @@
   <data name="E-mail is not valid" xml:space="preserve">
     <value>El correo no es válido</value>
   </data>
+  <data name="Invalid date format" xml:space="preserve">
+    <value>Formato de fecha no válido</value>
+  </data>
   <data name="Job applicant email" xml:space="preserve">
     <value>Correo electrónico del solicitante de empleo</value>
   </data>
@@ -137,6 +140,9 @@
   </data>
   <data name="Please provide your name" xml:space="preserve">
     <value>Por favor proporcione su nombre</value>
+  </data>
+  <data name="Please select a valid value" xml:space="preserve">
+    <value>Seleccione un valor válido.</value>
   </data>
   <data name="Please select your sex" xml:space="preserve">
     <value>Por favor selecciona tu sexo</value>
