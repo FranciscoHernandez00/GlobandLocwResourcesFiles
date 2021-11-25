@@ -3,11 +3,13 @@
 
 @{ 
     var culture = Context.Features.Get<Microsoft.AspNetCore.Localization.IRequestCultureFeature>();
+
     var cultureList = locOptions.Value.SupportedCultures.Select(x => new SelectListItem
     {
         Value = x.Name,
         Text = localizer.GetString(x.Name)
     }).ToList();
+
     var returnUrl = string.IsNullOrWhiteSpace(Context.Request.Path)? "~/": 
         $"~{Context.Request.Path.Value}{Context.Request.QueryString}";
 }
